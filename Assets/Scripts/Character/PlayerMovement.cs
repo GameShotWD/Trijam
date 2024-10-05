@@ -11,22 +11,28 @@ public class PlayerMovement : MonoBehaviour
     private float HorizontalInput = 0;
     private float VerticalInput = 0;
     [SerializeField] float RotationSpeed = 10;
+    private CharacterController characterController;
 
+
+    private void Start()
+    {
+        characterController = GetComponent<CharacterController>();
+    }
     private void Update()
     {
         HorizontalInput = Input.GetAxis("Horizontal");
         VerticalInput = Input.GetAxis("Vertical");
-
+        PlayerMove();
     }
     private void FixedUpdate()
     {
-        PlayerMove();
         PlayerRotate();
     }
     void PlayerMove()
     {
         Vector3 Direction = new Vector3(HorizontalInput, 0, VerticalInput);
-        transform.Translate(Direction * Speed * Time.deltaTime);
+
+        characterController.Move(Direction.normalized / 30 *Speed);
     }
 
     void PlayerRotate()
