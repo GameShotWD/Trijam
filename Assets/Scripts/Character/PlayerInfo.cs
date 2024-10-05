@@ -9,6 +9,12 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField] private int MaxHP = 0;
     [SerializeField] private int Coins = 0;
     [SerializeField] private int MaxCoins = 0;
+    [SerializeField] private int Damage = 0;
+
+    public int GetDamage()
+    {
+        return Damage;
+    }
 
     public int GetFirstHP()
     {
@@ -22,16 +28,18 @@ public class PlayerInfo : MonoBehaviour
     {
         return MaxHP;
     }
-    public void SetMaxHP(int hp) {
+    public void SetMaxHP(int hp)
+    {
         MaxHP = hp;
         HP = MaxHP;
     }
-    public void AddCoins(int NewCoins) {
+    public void AddCoins(int NewCoins)
+    {
         if (Coins + NewCoins <= MaxCoins)
         {
             Coins += NewCoins;
         }
-        else Coins = MaxCoins; 
+        else Coins = MaxCoins;
     }
     public void SetMaxCoins(int NewMaxCoins)
     {
@@ -65,3 +73,5 @@ public class PlayerInfo : MonoBehaviour
 
     }
 }
+
+
