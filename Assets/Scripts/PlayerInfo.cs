@@ -9,6 +9,12 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField] private int MaxHP = 0;
     [SerializeField] private int Coins = 0;
     [SerializeField] private int MaxCoins = 0;
+    [SerializeField] private int Damage = 0;
+
+    public int GetDamage()
+    {
+        return Damage;
+    }
 
     public int GetFirstHP()
     {
