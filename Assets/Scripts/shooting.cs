@@ -26,7 +26,7 @@ public class shooting : MonoBehaviour
                 GameObject Ammo = Instantiate(Shot, transform.position + transform.forward, this.transform.rotation);
                 AmmoRB = Ammo.AddComponent<Rigidbody>();
                 AmmoRB.AddForce(transform.forward * ShotPower, ForceMode.Impulse);
-                AmmoRB.mass = 0;
+                AmmoRB.useGravity = false;
 
                 Destroy(Ammo, 5);
                 StartCoroutine(Wait());
