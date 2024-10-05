@@ -9,6 +9,7 @@ public class shooting : MonoBehaviour
     private bool delay = false;
     public bool active = false;
     [SerializeField] private float ShotPower = 0;
+    private Rigidbody AmmoRB;
     IEnumerator Wait()
     {
         delay = true;
@@ -23,7 +24,10 @@ public class shooting : MonoBehaviour
             if (active)
             {
                 GameObject Ammo = Instantiate(Shot, transform.position + transform.forward, this.transform.rotation);
-                Ammo.AddComponent<Rigidbody>().AddForce(transform.forward * ShotPower, ForceMode.Impulse);
+                AmmoRB = Ammo.AddComponent<Rigidbody>();
+                AmmoRB.AddForce(transform.forward * ShotPower, ForceMode.Impulse);
+                AmmoRB.mass = 0;
+
                 Destroy(Ammo, 5);
                 StartCoroutine(Wait());
             }
