@@ -21,23 +21,27 @@ public class Shop : MonoBehaviour
         Canvas = GameObject.Find("Shop");
         Canvas.SetActive(false);
     }
-    private void BuyAtkSpeed()
+    public void BuyAtkSpeed()
     {
         Player.RemoveCoins(CostAtkSpeedLvl);
         CostAtkSpeedLvl += 10;
         Player.AtcSpeedUp();
     }
-    private void BuyAtk()
+    public void BuyAtk()
     {
         Player.RemoveCoins(CostAtkLvl);
         CostAtkLvl += 10;
         Player.AddDamage();
     }
-    private void BuySpeed()
+    public void BuySpeed()
     {
         Player.RemoveCoins(CostSpeedLvl);
         CostSpeedLvl += 10;
         Player.SpeedUp();
+    }
+    public void RemoveMaxHP()
+    {
+        Player.AddMaxCoin();
     }
 
 

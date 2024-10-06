@@ -27,6 +27,13 @@ public class PlayerInfo : MonoBehaviour
     public void SpeedUp() {
         PM.Speed += 10;
     }
+    public void AddMaxCoin()
+    {
+        if (MaxHP > 1) {
+            MaxHP--;
+            MaxCoins += 10;
+        }
+    }
 
     public int GetDamage()
     {
