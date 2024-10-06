@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class shooting : MonoBehaviour
+public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject Bullet;
     [SerializeField] private float shot_delay = 0;
