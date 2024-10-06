@@ -24,6 +24,7 @@ public class Shooting : MonoBehaviour
             if (active)
             {
                 animator.SetTrigger("Attack");
+                
                 GameObject Ammo = Instantiate(Bullet, transform.position + transform.forward + new Vector3(0, 1, 0), this.transform.rotation);
                 AmmoRB = Ammo.AddComponent<Rigidbody>();
                 AmmoRB.AddForce(transform.forward * ShotPower, ForceMode.Impulse);
