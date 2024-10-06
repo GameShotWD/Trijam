@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -8,6 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<GameObject> Enemies = new List<GameObject>();
     [SerializeField] int SpawnDelay = 10;
     [SerializeField] int SpawnCount = 5;
+    private float Speed = 3;
     private bool delay = false;
 
     private void Start()
@@ -34,10 +36,14 @@ public class Spawner : MonoBehaviour
             {
                 int SpawnerId = Random.Range(0, SpawnPoints.Count - 1);
                 int EnemyId = Random.Range(0, Enemies.Count - 1);
-                Instantiate(Enemies[EnemyId], SpawnPoints[SpawnerId].transform.position, SpawnPoints[SpawnerId].transform.rotation);
+                GameObject enemy =  Instantiate(Enemies[EnemyId], SpawnPoints[SpawnerId].transform.position, SpawnPoints[SpawnerId].transform.rotation);
+                enemy.GetComponent<EnemyMovement>().SetSpeed(Speed);
             }
             StartCoroutine(Wait());
+            if(Speed + 1 !> 7)
+                Speed++;
             SpawnCount++;
+
         }
     }
     IEnumerator Wait()

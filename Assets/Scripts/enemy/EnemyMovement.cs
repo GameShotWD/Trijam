@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private float Speed = 10;
     private NavMeshAgent NavMesh;
     private bool bCanMove = true;
     private Animator animator;
@@ -25,5 +25,11 @@ public class EnemyMovement : MonoBehaviour
             NavMesh.SetDestination(Player.transform.position);
         }
         animator.SetFloat("Speed", NavMesh.velocity.magnitude);
+    }
+
+    public void SetSpeed(float lSpeed) 
+    {
+        if (NavMesh != null && bCanMove)
+            NavMesh.speed = lSpeed;
     }
 }

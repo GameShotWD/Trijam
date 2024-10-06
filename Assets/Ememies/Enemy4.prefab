@@ -588,7 +588,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8a04633ba6eb94992f3cfdf85f4c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 1
+  AttackDelay: 1
 --- !u!114 &5696237372771703350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,11 +617,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.2
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}

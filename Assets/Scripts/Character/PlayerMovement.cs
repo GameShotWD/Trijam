@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float Speed = 10;
+    public float Speed = 1;
     private float HorizontalInput = 0;
     private float VerticalInput = 0;
     [SerializeField] float RotationSpeed = 10;
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 Direction = new Vector3(HorizontalInput, 0, VerticalInput);
 
-        characterController.Move(Direction.normalized / 30 *Speed);
+        characterController.Move(Direction.normalized / 40 * Speed);
 
         animator.SetFloat("Speed", characterController.velocity.magnitude);
     }

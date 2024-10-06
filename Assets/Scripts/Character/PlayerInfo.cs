@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField] private int Coins = 0;
     [SerializeField] private int MaxCoins = 0;
     [SerializeField] private int Damage = 0;
+    [SerializeField] private TMP_Text CoinsText;
+    [SerializeField] private TMP_Text HPText;
 
     private Shooting shot;
     private PlayerMovement PM;
@@ -20,17 +23,23 @@ public class PlayerInfo : MonoBehaviour
         HP = MaxHP;
         Coins = 0;
     }
+    private void Update()
+    {
+        CoinsText.text = "Coins: " + Coins.ToString();
+        HPText.text = "HP: " + HP.ToString();
+    }
+    
     public void AtcSpeedUp()
     {
         shot.SetAtkSpeed(1);
     }
     public void SpeedUp() {
-        PM.Speed += 10;
+        PM.Speed += 1;
     }
     public void AddMaxCoin()
     {
         if (MaxHP > 1) {
-            MaxHP--;
+            SetMaxHP(MaxHP - 1);
             MaxCoins += 10;
         }
     }
@@ -79,12 +88,14 @@ public class PlayerInfo : MonoBehaviour
         }
         else Coins = MaxCoins;
     }
-    public void RemoveCoins(int NewCoins)
+    public bool RemoveCoins(int NewCoins)
     {
         if (Coins - NewCoins >= 0)
         {
             Coins -= NewCoins;
+            return true;
         }
+        return false;
     }
     public void SetMaxCoins(int NewMaxCoins)
     {

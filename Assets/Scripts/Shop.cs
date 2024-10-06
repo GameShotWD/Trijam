@@ -17,27 +17,36 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        Player = GetComponent<PlayerInfo>();
+        Player = GameObject.Find("Player").GetComponent<PlayerInfo>();
         Canvas = GameObject.Find("Shop");
         Canvas.SetActive(false);
     }
     public void BuyAtkSpeed()
     {
-        Player.RemoveCoins(CostAtkSpeedLvl);
-        CostAtkSpeedLvl += 10;
-        Player.AtcSpeedUp();
+        if (Player.RemoveCoins(CostAtkSpeedLvl))
+        {
+            Player.RemoveCoins(CostAtkSpeedLvl);
+            CostAtkSpeedLvl += 10;
+            Player.AtcSpeedUp();
+        }
     }
     public void BuyAtk()
     {
-        Player.RemoveCoins(CostAtkLvl);
-        CostAtkLvl += 10;
-        Player.AddDamage();
+        if (Player.RemoveCoins(CostAtkLvl))
+        {
+            Player.RemoveCoins(CostAtkLvl);
+            CostAtkLvl += 10;
+            Player.AddDamage();
+        }
     }
     public void BuySpeed()
     {
-        Player.RemoveCoins(CostSpeedLvl);
-        CostSpeedLvl += 10;
-        Player.SpeedUp();
+        if (Player.RemoveCoins(CostSpeedLvl))
+        {
+            CostSpeedLvl += 10;
+            Player.SpeedUp();
+        }
+       
     }
     public void RemoveMaxHP()
     {
