@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInfo : MonoBehaviour
 {
     [SerializeField] private int HP = 0;
-    [SerializeField] private int FirstHP = 0;
+    [SerializeField] private int FirstHP = 10;
     [SerializeField] private int MaxHP = 0;
     [SerializeField] private int Coins = 0;
     [SerializeField] private int MaxCoins = 0;
@@ -15,7 +15,17 @@ public class PlayerInfo : MonoBehaviour
     {
         return Damage;
     }
-
+    public void TakeDamage(int Damage)
+    {
+       if (HP - Damage <= 0) 
+        {
+            HP = 0;
+        }
+        else
+        {
+            HP -= Damage;
+        }
+    }
     public int GetFirstHP()
     {
         return FirstHP;
