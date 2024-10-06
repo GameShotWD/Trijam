@@ -29,6 +29,7 @@ public class Shop : MonoBehaviour
             CostAtkSpeedLvl += 10;
             Player.AtcSpeedUp();
         }
+        AtkSpeedLvlText.text = CostAtkSpeedLvl.ToString();
     }
     public void BuyAtk()
     {
@@ -38,6 +39,7 @@ public class Shop : MonoBehaviour
             CostAtkLvl += 10;
             Player.AddDamage();
         }
+        AtkLvlText.text = CostAtkLvl.ToString();
     }
     public void BuySpeed()
     {
@@ -46,7 +48,8 @@ public class Shop : MonoBehaviour
             CostSpeedLvl += 10;
             Player.SpeedUp();
         }
-       
+        SpeedLvlText.text = CostSpeedLvl.ToString();
+
     }
     public void RemoveMaxHP()
     {
