@@ -49,6 +49,13 @@ public class PlayerInfo : MonoBehaviour
         }
         else Coins = MaxCoins;
     }
+    public void RemoveCoins(int NewCoins)
+    {
+        if (Coins - NewCoins >= 0)
+        {
+            Coins -= NewCoins;
+        }
+    }
     public void SetMaxCoins(int NewMaxCoins)
     {
         MaxCoins = NewMaxCoins;

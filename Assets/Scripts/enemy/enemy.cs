@@ -24,7 +24,7 @@ public class enemy : MonoBehaviour
     }
     private void Dead()
     {
-        player.AddCoins(Cost + player.GetMaxHP() - player.GetHP() + player.GetFirstHP() - player.GetMaxHP());
+        player.AddCoins(Cost - player.GetHP() + player.GetFirstHP());
         Destroy(this.gameObject);
     }
    /* private void OnCollisionEnter(Collision collision)
