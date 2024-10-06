@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
     [SerializeField] private GameObject Canvas;
-    private int SpeedLvl = 0;
-    private int AtkLvl = 0;
-    private int AtkSpeedLvl = 0;
+    [SerializeField]private Text SpeedLvlText;
+    [SerializeField]private Text AtkLvlText;
+    [SerializeField]private Text AtkSpeedLvlText;
 
     private int CostSpeedLvl = 0;
     private int CostAtkLvl = 0;
@@ -69,6 +69,9 @@ public class Shop : MonoBehaviour
         else
         {
             Canvas.SetActive(true);
+            SpeedLvlText.text=CostSpeedLvl.ToString();
+            AtkLvlText.text = CostAtkLvl.ToString();
+            AtkSpeedLvlText.text = CostAtkSpeedLvl.ToString();
         }
     }
 }
