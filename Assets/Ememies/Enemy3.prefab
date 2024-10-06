@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
-  Cost: 0
+  Cost: 1
 --- !u!114 &5207057572161492820
 MonoBehaviour:
   m_ObjectHideFlags: 0
