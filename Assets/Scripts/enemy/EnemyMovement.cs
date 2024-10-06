@@ -9,10 +9,11 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent NavMesh;
     private bool bCanMove = true;
 
-    [SerializeField] private GameObject Player;
+    private GameObject Player;
 
     private void Start()
     {
+        Player = GameObject.Find("Player");
         NavMesh = GetComponent<NavMeshAgent>();
     }
     private void Update()
