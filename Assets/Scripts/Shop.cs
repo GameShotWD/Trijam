@@ -4,6 +4,9 @@ using UnityEngine.XR;
 public class Shop : MonoBehaviour
 {
     [SerializeField] private GameObject Canvas;
+    private int SpeedLvl = 0;
+    private int AtkLvl = 0;
+    private int AtkSpeedLvl = 0;
     private void Start()
     {
         Canvas = GameObject.Find("Shop");
