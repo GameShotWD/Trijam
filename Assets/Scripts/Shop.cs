@@ -23,8 +23,22 @@ public class Shop : MonoBehaviour
     }
     private void BuyAtkSpeed()
     {
-        if (Player.Get)
+        Player.RemoveCoins(CostAtkSpeedLvl);
+        CostAtkSpeedLvl += 10;
+        
     }
+    private void BuyAtk()
+    {
+        Player.RemoveCoins(CostAtkLvl);
+        CostAtkLvl += 10;
+    }
+    private void BuySpeed()
+    {
+        Player.RemoveCoins(CostSpeedLvl);
+        CostSpeedLvl += 10;
+    }
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M)) {

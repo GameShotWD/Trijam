@@ -9,9 +9,23 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField] private int MaxCoins = 0;
     [SerializeField] private int Damage = 0;
 
+    private Shooting shot;
+    private PlayerMovement PM;
+
+    private void Start()
+    {
+        MaxHP = FirstHP;
+        HP = MaxHP;
+        Coins = 0;
+    }
+
     public int GetDamage()
     {
         return Damage;
+    }
+    public void AddDamage()
+    {
+        Damage++;
     }
     public void TakeDamage(int Damage)
     {
@@ -61,12 +75,7 @@ public class PlayerInfo : MonoBehaviour
         MaxCoins = NewMaxCoins;
     }
 
-    private void Start()
-    {
-        MaxHP = FirstHP;
-        HP = MaxHP;
-        Coins = 0;
-    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
