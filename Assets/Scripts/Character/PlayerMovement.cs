@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float Speed = 10;
+    public float Speed = 10;
     private float HorizontalInput = 0;
     private float VerticalInput = 0;
     [SerializeField] float RotationSpeed = 10;

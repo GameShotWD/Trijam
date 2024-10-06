@@ -10,6 +10,10 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float ShotPower = 5;
     private Rigidbody AmmoRB;
     [SerializeField] private Animator animator;
+
+    public void SetAtkSpeed(int AtkSpeed) {
+        shot_delay -= 0.1f; 
+    }
     IEnumerator Wait()
     {
         delay = true;

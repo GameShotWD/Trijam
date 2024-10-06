@@ -25,17 +25,19 @@ public class Shop : MonoBehaviour
     {
         Player.RemoveCoins(CostAtkSpeedLvl);
         CostAtkSpeedLvl += 10;
-        
+        Player.AtcSpeedUp();
     }
     private void BuyAtk()
     {
         Player.RemoveCoins(CostAtkLvl);
         CostAtkLvl += 10;
+        Player.AddDamage();
     }
     private void BuySpeed()
     {
         Player.RemoveCoins(CostSpeedLvl);
         CostSpeedLvl += 10;
+        Player.SpeedUp();
     }
 
 

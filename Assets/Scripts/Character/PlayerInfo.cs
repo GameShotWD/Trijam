@@ -14,9 +14,18 @@ public class PlayerInfo : MonoBehaviour
 
     private void Start()
     {
+        shot = GetComponent<Shooting>();
+        PM = GetComponent<PlayerMovement>();
         MaxHP = FirstHP;
         HP = MaxHP;
         Coins = 0;
+    }
+    public void AtcSpeedUp()
+    {
+        shot.SetAtkSpeed(1);
+    }
+    public void SpeedUp() {
+        PM.Speed += 10;
     }
 
     public int GetDamage()
