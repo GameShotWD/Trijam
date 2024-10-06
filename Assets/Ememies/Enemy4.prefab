@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 7007201365220297758}
   - component: {fileID: 8171498250814242005}
   - component: {fileID: 5696237372771703350}
+  - component: {fileID: 258003764532184274}
   m_Layer: 0
   m_Name: Enemy4
   m_TagString: Untagged
@@ -600,3 +601,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0bbd563821e834a98acc04802de2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &258003764532184274
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775293380104942604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
