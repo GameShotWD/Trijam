@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Shop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject Canvas;
+    private void Start()
     {
-        
+        Canvas = GameObject.Find("Shop");
+        Canvas.SetActive(false);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.M)) {
+            ChangeState();
+        }
+    }
+    private void ChangeState()
+    {
+        if (Canvas.activeSelf == true)
+        {
+            Canvas.SetActive(false);
+        }
+        else
+        {
+            Canvas.SetActive(true);
+        }
     }
 }
