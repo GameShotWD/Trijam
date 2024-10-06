@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerRotate()
     {
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out RaycastHit hit, 1500);
         if (hit.collider != null)

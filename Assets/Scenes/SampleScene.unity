@@ -569,7 +569,7 @@ MonoBehaviour:
   Bullet: {fileID: 3153654066654664108, guid: df35059c5f9820e418902a90be763b79, type: 3}
   shot_delay: 2
   active: 1
-  ShotPower: 0
+  ShotPower: 5
   animator: {fileID: 95538263147953609}
 --- !u!1001 &6864226441681417923
 PrefabInstance:
@@ -583,6 +583,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5715465181621182401, guid: adbb1cfe71301cb408bff9e6c8baccf6, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 95538263147953609}
     - target: {fileID: 5715465181621182401, guid: adbb1cfe71301cb408bff9e6c8baccf6, type: 3}
       propertyPath: m_Enabled
       value: 1

@@ -11,25 +11,28 @@ public class enemy : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<PlayerInfo>();
     }
-    public void TakeDamage()
+    public void TakeDamage(int Damage)
     {
-        HP -= player.GetDamage();
-        if (HP <= 0)
+        Debug.Log("Damage");
+        if (HP - Damage <= 0)
         {
+            HP = 0;
             Dead();
         }
+        else
+            HP -= Damage;
     }
     private void Dead()
     {
         player.AddCoins(Cost + player.GetMaxHP() - player.GetHP() + player.GetFirstHP() - player.GetMaxHP());
         Destroy(this.gameObject);
     }
-    private void OnCollisionEnter(Collision collision)
+   /* private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "ammo")
         {
             TakeDamage();
             Destroy(collision.gameObject);
         }
-    }
+    }*/
 }

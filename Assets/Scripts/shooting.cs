@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float shot_delay = 0;
     private bool delay = false;
     public bool active = false;
-    [SerializeField] private float ShotPower = 0;
+    [SerializeField] private float ShotPower = 5;
     private Rigidbody AmmoRB;
     [SerializeField] private Animator animator;
     IEnumerator Wait()
@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
             if (active)
             {
                 animator.SetTrigger("Attack");
-                GameObject Ammo = Instantiate(Bullet, transform.position + transform.forward, this.transform.rotation);
+                GameObject Ammo = Instantiate(Bullet, transform.position + transform.forward + new Vector3(0, 1, 0), this.transform.rotation);
                 AmmoRB = Ammo.AddComponent<Rigidbody>();
                 AmmoRB.AddForce(transform.forward * ShotPower, ForceMode.Impulse);
                 AmmoRB.useGravity = false;
