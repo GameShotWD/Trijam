@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class shooting : MonoBehaviour
 {
-    [SerializeField] private GameObject Shot;
+    [SerializeField] private GameObject Bullet;
     [SerializeField] private float shot_delay = 0;
     private bool delay = false;
     public bool active = false;
@@ -22,7 +22,7 @@ public class shooting : MonoBehaviour
         {
             if (active)
             {
-                GameObject Ammo = Instantiate(Shot, transform.position + transform.forward, this.transform.rotation);
+                GameObject Ammo = Instantiate(Bullet, transform.position + transform.forward, this.transform.rotation);
                 AmmoRB = Ammo.AddComponent<Rigidbody>();
                 AmmoRB.AddForce(transform.forward * ShotPower, ForceMode.Impulse);
                 AmmoRB.useGravity = false;
