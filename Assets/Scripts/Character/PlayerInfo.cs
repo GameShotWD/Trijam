@@ -57,6 +57,7 @@ public class PlayerInfo : MonoBehaviour
        if (HP - Damage <= 0) 
         {
             HP = 0;
+            Dead();
         }
         else
         {
@@ -121,7 +122,7 @@ public class PlayerInfo : MonoBehaviour
 
     void Dead()
     {
-
+        Time.timeScale = 0;
     }
 }
 
